@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 
 import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
