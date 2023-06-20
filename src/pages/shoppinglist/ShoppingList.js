@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 
+
 function ShoppingList() {
 
     const [list, setList] = useState([]);
@@ -29,7 +30,7 @@ function ShoppingList() {
             <h2>Click on items to delete them.</h2>
             <div className="input">
                 <input type="text" value={inputData} onChange={(event) => setInputData(event.target.value)}/>
-                <input type="button" value="ADD" onClick={() => handleAddItem()}/>
+                <input type="button" value="+" onClick={() => handleAddItem()}/>
             </div>
             <div className="list">
                 {list.map((item, index) => {
@@ -44,8 +45,6 @@ function ShoppingList() {
         
     )
 
-
-
-
 };
 
+export default ShoppingList;
