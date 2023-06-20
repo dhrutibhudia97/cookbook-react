@@ -16,6 +16,7 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import NotFound from "./components/NotFound";
+import ShoppingList from "./pages/shoppinglist/ShoppingList"
 
 
 function App() {
@@ -54,6 +55,18 @@ function App() {
                 />
               )}
             />
+
+            <Route
+              exact
+              path="/shoppinglist"
+              render={() => (
+                <ShoppingList
+                  message="No results found. Adjust the search keyword or like a post."
+                />
+              )}
+            />
+
+
             <Route exact path="/signin" render={() => <SignInForm />} />
             <Route exact path="/signup" render={() => <SignUpForm />} />
             <Route exact path="/posts/create" render={() => <PostCreateForm />} />
