@@ -1,4 +1,3 @@
-import React from "react";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
@@ -20,7 +19,6 @@ export const CurrentUserProvider = ({ children }) => {
       const { data } = await axiosRes.get("dj-rest-auth/user/");
       setCurrentUser(data);
     } catch (err) {
-      // console.log(err);
     }
   };
 
@@ -75,10 +73,10 @@ export const CurrentUserProvider = ({ children }) => {
   }, [history]);
 
   return (
-    <CurrentUserContext.Provider value={currentUser}>
-      <SetCurrentUserContext.Provider value={setCurrentUser}>
-        {children}
-      </SetCurrentUserContext.Provider>
-    </CurrentUserContext.Provider>
+      <CurrentUserContext.Provider value={currentUser}>
+          <SetCurrentUserContext.Provider value={setCurrentUser}>
+              {children}
+          </SetCurrentUserContext.Provider>
+      </CurrentUserContext.Provider>
   );
 };

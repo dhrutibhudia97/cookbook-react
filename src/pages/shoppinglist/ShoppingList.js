@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 
-
 function ShoppingList() {
 
     const [list, setList] = useState([]);
@@ -9,7 +8,7 @@ function ShoppingList() {
 
     const handleAddItem = () => {
         const newList = [...list, {title: inputData}];
-        StyleSheetList(newList);
+        setList(newList);
         setInputData('');
         console.log(list)
     }
