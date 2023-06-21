@@ -59,11 +59,11 @@ function App() {
             <Route
               exact
               path="/shoppinglist"
-              render={() => (
+              render={() =>
                 <ShoppingList
-                  message="No results found. Adjust the search keyword or like a post."
+                  filter={currentUser}
                 />
-              )}
+              }
             />
 
 
