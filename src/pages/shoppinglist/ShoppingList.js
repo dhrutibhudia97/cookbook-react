@@ -111,7 +111,7 @@ function ListsPage({ message, filter = "" }) {
             onChange={(event) => setQuery(event.target.value)}
             type="text"
             className="mr-sm-2"
-            placeholder="Search item"
+            placeholder="Search for items in your shopping list..."
           />
         </Form>
 
