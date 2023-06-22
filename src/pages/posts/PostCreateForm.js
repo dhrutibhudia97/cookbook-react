@@ -27,10 +27,12 @@ function PostCreateForm() {
   
     const [postData, setPostData] = useState({
       title: "",
-      content: "",
+      keywords: "",
+      ingredients: "",
+      method: "",
       image: "",
     });
-    const { title, content, image } = postData;
+    const { title, keywords, ingredients, method, image } = postData;
   
     const imageInput = useRef(null);
     const history = useHistory();
@@ -57,7 +59,9 @@ function PostCreateForm() {
       const formData = new FormData();
   
       formData.append("title", title);
-      formData.append("content", content);
+      formData.append("keywords", keywords);
+      formData.append("ingredients", ingredients);
+      formData.append("method", method);
       formData.append("image", imageInput.current.files[0]);
   
       try {
@@ -89,16 +93,48 @@ function PostCreateForm() {
         ))}
   
         <Form.Group>
-          <Form.Label>Content</Form.Label>
+          <Form.Label>Keywords</Form.Label>
           <Form.Control
             as="textarea"
-            rows={6}
-            name="content"
-            value={content}
+            rows={2}
+            name="keywords"
+            value={keywords}
             onChange={handleChange}
           />
         </Form.Group>
-        {errors?.content?.map((message, idx) => (
+        {errors?.keywords?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+
+        <Form.Group>
+          <Form.Label>Ingredients</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={6}
+            name="ingredients"
+            value={ingredients}
+            onChange={handleChange}
+          />
+        </Form.Group>
+        {errors?.ingredients?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))}
+
+        <Form.Group>
+          <Form.Label>Method</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={6}
+            name="method"
+            value={method}
+            onChange={handleChange}
+          />
+        </Form.Group>
+        {errors?.method?.map((message, idx) => (
           <Alert variant="warning" key={idx}>
             {message}
           </Alert>
