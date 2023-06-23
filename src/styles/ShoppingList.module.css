@@ -1,20 +1,24 @@
 .Input {
     background: #ffffff;
-    border: 1px solid #f0f1f9;
+    border: 1.2px solid #995fab;
     box-sizing: border-box;
     border-radius: 2px;
-    color: #7177a1;
+    color: #d2d2e9;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
 }
   
 .Header {
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 18px;
+    line-height: 20px;
     text-align: center;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #2142b2;
+    color: #9248a8;
+}
+
+.btnStyles.Green {
+    color: aquamarine;
 }

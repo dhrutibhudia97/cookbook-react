@@ -8,8 +8,8 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import { axiosReq } from "../../api/axiosDefaults";
 import Asset from "../../components/Asset";
-import NoResults from "../../assets/no-results.png";
-//import styles from "../../styles/ListsPage.module.css";
+import NoResults from "../../assets/no-results.jpg";
+import styles from "../../styles/ShoppingList.module.css";
 import ListCreateForm from "./CreateShoppingList";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { MoreDropdown } from "../../components/MoreDropdown";
@@ -130,8 +130,8 @@ function ListsPage({ message, filter = "" }) {
                 <table className="table">
                   <thead>
                     <tr>
-                      <th>To buy</th>
-                      <th>Quantity</th>
+                      <th>Items:</th>
+                      <th>Quantity:</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -153,10 +153,10 @@ function ListsPage({ message, filter = "" }) {
                               />
                             </td>
                             <td>
-                              <button className={`${btnStyles.Button} ${btnStyles.Green}`} onClick={() => handleSaveEdit(item.id)}>
+                              <button className={`${btnStyles.Button}`} onClick={() => handleSaveEdit(item.id)}>
                                 Update
                               </button>
-                              <button className={`${btnStyles.Button} ${btnStyles.Green}`} onClick={handleCancelEdit}>Cancel</button>
+                              <button className={`${btnStyles.Button}`} onClick={handleCancelEdit}>Cancel</button>
                             </td>
                           </>
                         ) : (

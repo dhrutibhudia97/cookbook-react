@@ -25,7 +25,7 @@ function ListCreateForm({ setItems }) {
   };
 
   const handleCancel = () => {
-    const confirmed = window.confirm("Empty form?");
+    const confirmed = window.confirm("The form is empty!");
     if (confirmed) {
       setPostData({ name: "", quantity: "" });
       setErrors({});

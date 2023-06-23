@@ -13,7 +13,7 @@ import styles from "../../styles/PostsPage.module.css";
 import { useLocation } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 
-import NoResults from "../../assets/no-results.png";
+import NoResults from "../../assets/no-results.jpg";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils"
 import PopularProfiles from "../profiles/PopularProfiles";
@@ -52,7 +52,7 @@ function PostsPage({ message, filter = "" }) {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>Popular profiles mobile</p>
+        <p>Welcome to CookBook!</p>
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}
