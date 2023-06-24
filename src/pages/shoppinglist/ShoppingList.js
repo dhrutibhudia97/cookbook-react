@@ -9,11 +9,11 @@ import { fetchMoreData } from "../../utils/utils";
 import { axiosReq } from "../../api/axiosDefaults";
 import Asset from "../../components/Asset";
 import NoResults from "../../assets/no-results.jpg";
-import styles from "../../styles/ShoppingList.module.css";
-import ListCreateForm from "./CreateShoppingList";
+//import styles from "../../styles/ShoppingList.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import btnStyles from "../../styles/Button.module.css";
+import CreateListItem from "./CreateShoppingList";
 
 function ListsPage({ message, filter = "" }) {
   const currentUser = useCurrentUser();
@@ -103,7 +103,7 @@ function ListsPage({ message, filter = "" }) {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8} xl={9}>
         <Form
-          //className={styles.NavBar}
+          className="{styles.SearchBar}"
           onSubmit={(event) => event.preventDefault()}
         >
           <Form.Control
@@ -115,7 +115,7 @@ function ListsPage({ message, filter = "" }) {
           />
         </Form>
 
-        <ListCreateForm setItems={setItems} />
+        <CreateListItem setItems={setItems} />
 
         {hasLoaded ? (
           <>
@@ -149,14 +149,14 @@ function ListsPage({ message, filter = "" }) {
                               <Form.Control
                                 value={editingItemQuantity}
                                 onChange={(e) => setEditingItemQuantity(e.target.value)}
-                                type="number"
+                                //type="number"
                               />
                             </td>
                             <td>
-                              <button className={`${btnStyles.Button}`} onClick={() => handleSaveEdit(item.id)}>
+                              <button className={`${btnStyles.Button} ${btnStyles.Green}`} onClick={() => handleSaveEdit(item.id)}>
                                 Update
                               </button>
-                              <button className={`${btnStyles.Button}`} onClick={handleCancelEdit}>Cancel</button>
+                              <button className={`${btnStyles.Button} ${btnStyles.Red}`} onClick={handleCancelEdit}>Cancel</button>
                             </td>
                           </>
                         ) : (

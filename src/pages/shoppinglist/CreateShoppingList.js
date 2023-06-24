@@ -7,7 +7,7 @@ import btnStyles from "../../styles/Button.module.css";
 import Alert from "react-bootstrap/Alert";
 import { axiosReq } from "../../api/axiosDefaults";
 
-function ListCreateForm({ setItems }) {
+function CreateListItem({ setItems }) {
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({
@@ -75,12 +75,12 @@ function ListCreateForm({ setItems }) {
       <Form.Group>
         <Form.Label>Quantity</Form.Label>
         <Form.Control
-          type="number"
+          type="text"
           name="quantity"
           value={quantity}
           onChange={handleChange}
           className="form-control-sm"
-          min={1}
+          //min={1}
         />
       </Form.Group>
       {errors?.quantity?.map((message, idx) => (
@@ -94,7 +94,7 @@ function ListCreateForm({ setItems }) {
         Add item
       </Button>
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Green}`}
+        className={`${btnStyles.Button} ${btnStyles.Red}`}
         onClick={handleCancel}
       >
         Cancel
@@ -111,4 +111,4 @@ function ListCreateForm({ setItems }) {
   );
 }
 
-export default ListCreateForm;
+export default CreateListItem;
