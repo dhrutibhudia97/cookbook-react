@@ -25,7 +25,7 @@ function CreateListItem({ setItems }) {
   };
 
   const handleCancel = () => {
-    const confirmed = window.confirm("The form is empty!");
+    const confirmed = window.confirm("Nothing was entered!");
     if (confirmed) {
       setPostData({ name: "", quantity: "" });
       setErrors({});
@@ -80,7 +80,6 @@ function CreateListItem({ setItems }) {
           value={quantity}
           onChange={handleChange}
           className="form-control-sm"
-          //min={1}
         />
       </Form.Group>
       {errors?.quantity?.map((message, idx) => (
@@ -104,7 +103,7 @@ function CreateListItem({ setItems }) {
 
   return (
     <Container className={`d-flex align-items-center justify-content-center ${appStyles.Content}`}>
-      <Form onSubmit={handleSubmit} className="w-100">
+      <Form onSubmit={handleSubmit} className="w-75">
         {textFields}
       </Form>
     </Container>

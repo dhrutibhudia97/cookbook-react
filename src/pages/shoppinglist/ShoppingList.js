@@ -9,43 +9,43 @@ import { fetchMoreData } from "../../utils/utils";
 import { axiosReq } from "../../api/axiosDefaults";
 import Asset from "../../components/Asset";
 import NoResults from "../../assets/no-results.jpg";
-//import styles from "../../styles/ShoppingList.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import btnStyles from "../../styles/Button.module.css";
 import CreateListItem from "./CreateShoppingList";
 
-function ListsPage({ message, filter = "" }) {
+
+function ShoppingListsPage({ message, filter = "" }) {
   const currentUser = useCurrentUser();
   const [items, setItems] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
   const [query, setQuery] = useState("");
-  const [editingItemId, setEditingItemId] = useState(null);
+  const [editingItemEntry, setEditingItemEntry] = useState(null);
   const [editingItemName, setEditingItemName] = useState("");
   const [editingItemQuantity, setEditingItemQuantity] = useState("");
 
-  const handleEdit = (itemId, itemName, itemQuantity) => {
-    setEditingItemId(itemId);
+  const handleEdit = (itemEntry, itemName, itemQuantity) => {
+    setEditingItemEntry(itemEntry);
     setEditingItemName(itemName);
     setEditingItemQuantity(itemQuantity);
   };
 
   const handleCancelEdit = () => {
-    setEditingItemId(null);
+    setEditingItemEntry(null);
     setEditingItemName("");
     setEditingItemQuantity("");
   };
 
-  const handleSaveEdit = async (itemId) => {
+  const handleSaveEdit = async (itemEntry) => {
     try {
-      await axiosReq.put(`/shoppinglist/${itemId}/`, {
+      await axiosReq.put(`/shoppinglist/${itemEntry}/`, {
         name: editingItemName,
         quantity: editingItemQuantity,
       });
       setItems((prevItems) =>
         prevItems.map((item) => {
-          if (item.id === itemId) {
+          if (item.id === itemEntry) {
             return {
               ...item,
               name: editingItemName,
@@ -55,7 +55,7 @@ function ListsPage({ message, filter = "" }) {
           return item;
         })
       );
-      setEditingItemId(null);
+      setEditingItemEntry(null);
       setEditingItemName("");
       setEditingItemQuantity("");
     } catch (err) {
@@ -63,12 +63,12 @@ function ListsPage({ message, filter = "" }) {
     }
   };
 
-  const handleDelete = async (itemId) => {
-    const confirmed = window.confirm("Are you sure you want to delete this item?");
+  const handleDelete = async (itemEntry) => {
+    const confirmed = window.confirm("Are you sure you want to delete this from your shopping list?");
     if (confirmed) {
       try {
-        await axiosReq.delete(`/shoppinglist/${itemId}/`);
-        setItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
+        await axiosReq.delete(`/shoppinglist/${itemEntry}/`);
+        setItems((prevItems) => prevItems.filter((item) => item.id !== itemEntry));
       } catch (err) {
         console.log(err);
       }
@@ -76,11 +76,11 @@ function ListsPage({ message, filter = "" }) {
   };
 
   useEffect(() => {
-    const fetchLists = async () => {
+    const fetchShoppingLists = async () => {
       try {
         const { data } = await axiosReq.get(`/shoppinglist/?${filter}&search=${query}`);
         const filteredLists = data.results.filter((item) =>
-          item.name.toLowerCase().includes(query.toLowerCase())
+          item.name.toUpperCase().includes(query.toUpperCase())
         );
         setItems(filteredLists);
         setHasLoaded(true);
@@ -91,8 +91,8 @@ function ListsPage({ message, filter = "" }) {
 
     setHasLoaded(false);
     const timer = setTimeout(() => {
-      fetchLists();
-    }, 1000);
+      fetchShoppingLists();
+    }, 1500);
 
     return () => {
       clearTimeout(timer);
@@ -130,14 +130,14 @@ function ListsPage({ message, filter = "" }) {
                 <table className="table">
                   <thead>
                     <tr>
-                      <th>Items:</th>
+                      <th>Items to buy:</th>
                       <th>Quantity:</th>
                     </tr>
                   </thead>
                   <tbody>
                     {items.map((item) => (
                       <tr key={item.id}>
-                        {editingItemId === item.id ? (
+                        {editingItemEntry === item.id ? (
                           <>
                             <td>
                               <Form.Control
@@ -194,4 +194,4 @@ function ListsPage({ message, filter = "" }) {
   );
 }
 
-export default ListsPage;
+export default ShoppingListsPage;
