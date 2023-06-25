@@ -22,42 +22,42 @@ function ShoppingListsPage({ message, filter = "" }) {
   const { pathname } = useLocation();
   const [query, setQuery] = useState("");
   const [editingItemEntry, setEditingItemEntry] = useState(null);
-  const [editingItemName, setEditingItemName] = useState("");
-  const [editingItemQuantity, setEditingItemQuantity] = useState("");
+  const [editingItemTitle, setEditingItemTitle] = useState("");
+  const [editingItemAmount, setEditingItemAmount] = useState("");
 
-  const handleEdit = (itemEntry, itemName, itemQuantity) => {
+  const handleEdit = (itemEntry, itemTitle, itemAmount) => {
     setEditingItemEntry(itemEntry);
-    setEditingItemName(itemName);
-    setEditingItemQuantity(itemQuantity);
+    setEditingItemTitle(itemTitle);
+    setEditingItemAmount(itemAmount);
   };
 
   const handleCancelEdit = () => {
     setEditingItemEntry(null);
-    setEditingItemName("");
-    setEditingItemQuantity("");
+    setEditingItemTitle("");
+    setEditingItemAmount("");
   };
 
   const handleSaveEdit = async (itemEntry) => {
     try {
       await axiosReq.put(`/shoppinglist/${itemEntry}/`, {
-        name: editingItemName,
-        quantity: editingItemQuantity,
+        name: editingItemTitle,
+        quantity: editingItemAmount,
       });
       setItems((prevItems) =>
         prevItems.map((item) => {
           if (item.id === itemEntry) {
             return {
               ...item,
-              name: editingItemName,
-              quantity: editingItemQuantity,
+              name: editingItemTitle,
+              quantity: editingItemAmount,
             };
           }
           return item;
         })
       );
       setEditingItemEntry(null);
-      setEditingItemName("");
-      setEditingItemQuantity("");
+      setEditingItemTitle("");
+      setEditingItemAmount("");
     } catch (err) {
       console.log(err);
     }
@@ -141,15 +141,14 @@ function ShoppingListsPage({ message, filter = "" }) {
                           <>
                             <td>
                               <Form.Control
-                                value={editingItemName}
-                                onChange={(e) => setEditingItemName(e.target.value)}
+                                value={editingItemTitle}
+                                onChange={(e) => setEditingItemTitle(e.target.value)}
                               />
                             </td>
                             <td>
                               <Form.Control
-                                value={editingItemQuantity}
-                                onChange={(e) => setEditingItemQuantity(e.target.value)}
-                                //type="number"
+                                value={editingItemAmount}
+                                onChange={(e) => setEditingItemAmount(e.target.value)}
                               />
                             </td>
                             <td>
@@ -186,7 +185,7 @@ function ShoppingListsPage({ message, filter = "" }) {
           </>
         ) : (
           <Container>
-            <Asset spinner />
+            <p>... Loading Shopping List</p>
           </Container>
         )}
       </Col>

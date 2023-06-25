@@ -2,18 +2,17 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import { axiosReq } from "../../api/axiosDefaults";
+import Alert from "react-bootstrap/Alert";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import Alert from "react-bootstrap/Alert";
-import { axiosReq } from "../../api/axiosDefaults";
+
 
 function CreateListItem({ setItems }) {
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({
-    name: "",
-    quantity: "",
-  });
+    name: "", quantity: "",});
 
   const { name, quantity } = postData;
 
@@ -63,7 +62,6 @@ function CreateListItem({ setItems }) {
           name="name"
           value={name}
           onChange={handleChange}
-          className="form-control-sm"
         />
       </Form.Group>
       {errors?.name?.map((message, idx) => (
@@ -79,7 +77,6 @@ function CreateListItem({ setItems }) {
           name="quantity"
           value={quantity}
           onChange={handleChange}
-          className="form-control-sm"
         />
       </Form.Group>
       {errors?.quantity?.map((message, idx) => (
@@ -87,7 +84,6 @@ function CreateListItem({ setItems }) {
           {message}
         </Alert>
       ))}
-
 
       <Button className={`${btnStyles.Button} ${btnStyles.Green}`} type="submit">
         Add item
