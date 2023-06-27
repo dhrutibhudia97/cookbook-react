@@ -186,7 +186,7 @@ Sign In
  (stuff on project board)
 
 
-## Manual testing table
+## Manual Testing
 
 I focussed on Manual testing over Automated testing. The Results are in this table.
 
@@ -233,23 +233,24 @@ Sign In - Can enter valid input and sign in | Inputted valid username and passwo
 |Shopping List - Delete items | As a logged in user, attempt to delete items on the shopping list | ✓ - item and its quantity deleted and removed from the list, I can no longer see it. |
 
 
-
-
-
-
-
-
-
-
-
-## Automated testing screenshots (if done?)
-
 ## Validators
 ### HTML
+- No errors or warning when link passed through [W3](https://validator.w3.org/)
+- ![proj 5 html validator](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/dc26ead7-a3b9-4993-8926-d4ab8f5fda2d)
+
+
 ### CSS
-### Javascript (JS Hint)
-### Python (Python Linter?)
+- No errors when link passed through CSS validator [jigsawW3](https://jigsaw.w3.org/css-validator/)
+- ![proj 5 css validator](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/2b47c090-47de-402b-ac15-b249e395dbaf)
+
+### Javascript
+- All javascript files were manually passed through the validator [jshint](https://jshint.com/)
+- Warnings mainly consisted of "'import' is only available in ES6 (use 'esversion: 6').", "'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz)." and "'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6')."
+
 ### Lighthouse
+- Scored a 59 on lighthouse.
+- ![proj 5 lighthouse](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/ca1e4e41-68f2-4aab-a67f-5921505988b8)
+
 
 ## Languages & Technologies used
 

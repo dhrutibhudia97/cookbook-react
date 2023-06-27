@@ -129,6 +129,7 @@ function ShoppingListsPage({ message, filter = "" }) {
               >
                 <table className="table">
                   <thead>
+                    <h1>Your Shopping List:</h1>
                     <tr>
                       <th>Items to buy:</th>
                       <th>Quantity:</th>
