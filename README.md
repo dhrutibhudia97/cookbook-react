@@ -239,13 +239,29 @@ Sign In - Can enter valid input and sign in | Inputted valid username and passwo
 - ![proj 5 lighthouse](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/ca1e4e41-68f2-4aab-a67f-5921505988b8)
 
 
+## Components 
+There are 5 components used in this project.
+- Asset - The spinner animation used in multiple pages throughout this project displayed while the features were still loading. (in the home page when posts and top profiles were loading, in shoppinglist while the shopping list was loading).
+- Avatar - default avatar picture used for users who have not uploaded a profile picture.
+- MoreDropdown - drop down menu used to edit components, either the profile, or editing comments or shopping list items.
+- NavBar - Used at the top of all pages, customised for logged in or logged out users with matching icons.
+- NotFound - Used for page not found when unknown url is accessed, shows user a message and icon to indicate wrong page.
+
+### Hooks
+There are two hooks used in this project.
+- useClickOutsideToggle - used to close a drop down menu by clicking outside of the component.
+
+- useRedirect - in the sign in, sign up and post create forms to redirect users after they logged in or created a post.
+
+
 ## Languages & Technologies 
 - JavaScript
 - CSS
 - HTML
 - Python
-- React
+- React JS
 - React bootstrap
+- React library
 
 ### Other programs used
 - [Font Awesome](https://fontawesome.com/)
@@ -260,7 +276,6 @@ Sign In - Can enter valid input and sign in | Inputted valid username and passwo
 - [Am I Responsive?](https://ui.dev/amiresponsive)
 - [Pexel](https://www.pexels.com/)
 - [Pixabay](https://pixabay.com/)
-
 
 
 ## Deployment 
