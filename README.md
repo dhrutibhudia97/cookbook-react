@@ -1,16 +1,17 @@
 # CookBook - Portfolio Project 5
 
-Deployed site link: https://cookbook-react-project-5.herokuapp.com/
-Deployed back-end cookbook.api link: https://cookbook-project-5.herokuapp.com/
+![responsive proj 5](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/3e450189-2aa6-44d4-9b9e-d69eba3f7b19)
+
+- Deployed site link: https://cookbook-react-project-5.herokuapp.com/
+- Deployed back-end cookbook.api link: https://cookbook-project-5.herokuapp.com/
 
 ## Project Goals
+The aim for this project was to be able to build a content-sharing web application with React and API (Django Rest Framework) Back-End. Users are able to create an account and share their own recipes blogs, while viewing other recipe blogs that they can like and comment on, follow other users and create a shopping list to ensure they have everything the need to follow these recipes.
+The target audience would be anyone who is interested in food, cooking, drinks or who wants to learn more and try to cook more. This app allows interactivity between different users as they cn comment and like other posts to review recipes or ask questions to the user about their post.
 
-
-### Site User Goals
 
 ## User Stories - link to Kanban Project Board
 The user stories have been documented as a project that displays which user stories have been completed and which haven't. The Project board has been linked to this repository.
-
 
 The Link to the board can be found here:
 https://github.com/users/dhrutibhudia97/projects/4/views/1?layout=board
@@ -51,11 +52,6 @@ Sign In
 - ![sign in - mobile](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/ca8bad80-261a-49d1-891d-1cf04e300960)
 
 
-
-
-
-
-
 ## Features 
 ### Sign Up
 - Users that are not logged in can access this Sign Up Page.
@@ -65,7 +61,6 @@ Sign In
 - Cannot username that already exists, or passwords that are too short, entirely numerical, not matching.
 - ![sign up valid input](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/894e5a9b-f942-45d6-b93f-b733d74c6f77)
 
-
 ### Sign In
 - Users that are not logged in can access this Sign In Page.
 - ![feature sign in](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/c282836d-ba84-43ad-867f-ae9d8552ed60)
@@ -73,7 +68,6 @@ Sign In
 #### Valid input required
 - Cannot sign in with invalid input.
 - ![sign in valid input](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/312449c3-67b1-45a7-8813-bb1a0028de18)
-
 
 ### Home (logged out)
 - Home Page accessible when logged out. User unable to like or comment on posts, follow/unfollow profiles or access certain pages.
@@ -83,7 +77,6 @@ Sign In
 - Shows minimal options, can only access limited home, sign in and sign up pages.
 - ![nav bar logged out](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/7d3b5afb-0ac9-4e28-bccb-2f91ebcd8a09)
 
-
 ### Home (logged in)
 - User can now like and comment on posts, follow and unfollow other profiles and access more pages.
 - ![home page logged in](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/90aa8b7a-ac0b-4de0-90cb-d51e816b163d)
@@ -91,7 +84,6 @@ Sign In
 #### Navigation bar with added access to site
 - Added access to Add Post, My Faves, My Profile and Shopping List. 
 - ![navbar logged in](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/8de03a50-8029-46a4-af8a-c88b8beb49bd)
-
 
 ### Search Bar 
 - Search bar in homepage to search for specific posts, keywords, ingredients and users.
@@ -182,14 +174,9 @@ Sign In
 - When invalid url is typed in, user sees this page.
 - ![page does not exist](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/1540cc5a-9f28-4bbe-b9f5-61d275797fc2)
 
-## Potential Future Feature
- (stuff on project board)
-
 
 ## Manual Testing
-
 I focussed on Manual testing over Automated testing. The Results are in this table.
-
 
 | Feature Tested       | Steps taken                 | Results  |
 |----------------------|-----------------------------|----------|
@@ -252,13 +239,64 @@ Sign In - Can enter valid input and sign in | Inputted valid username and passwo
 - ![proj 5 lighthouse](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/ca1e4e41-68f2-4aab-a67f-5921505988b8)
 
 
-## Languages & Technologies used
+## Languages & Technologies 
+- JavaScript
+- CSS
+- HTML
+- Python
+- React
+- React bootstrap
 
-## Deployment (look at assessment criteria) ... how to deploy using gitpod/github and heroku...?
+### Other programs used
+- [Font Awesome](https://fontawesome.com/)
+- [Google Font](https://fonts.google.com/)
+- [Gitub](https://github.com/)
+- Gitpod
+- [Heroku](https://heroku.com/)
+- Axios
+- msw
+- jwt decode
+- [Balsamiq](https://balsamiq.com/) - wireframes
+- [Am I Responsive?](https://ui.dev/amiresponsive)
+- [Pexel](https://www.pexels.com/)
+- [Pixabay](https://pixabay.com/)
+
+
+
+## Deployment 
+
+This project was deployed on Heroku. Steps to deploy:
+1. I created a repository in Github using the https://github.com/Code-Institute-Org/react-ci-template/ template and named it "cookbook-react".
+2. On https://heroku.com/ I created a new app called "cookbook-react-project-5".
+3. In the gitpod terminal I installed the following:
+  - $ npm install
+  - $ npm start
+  - $ npm install react-bootstrap@1.6.3 bootstrap@4.6.0
+  - $ npm install react-router-dom@5.3.0
+  - $ npm install axios
+  - $ npm install react-infinite-scroll-component
+  - $ npm install msw --save-dev
+  - $ npm install jwt-decode
+4. Add a Procfile in the same level as your README.file and insert "web: serve -s build"
+5. On heroku, link your react app to this Github repository in the deploy tab.
+Make sure to git add, git commit and git push these changes.
+6. On heroku go to existing api dashboard for this project, and add to the Config Vars "CLIENT_ORIGIN", the value being the url of the deployed react app on heroku.
+7. Deploy your react app manually of heroku.
+
 
 ## Known errors/ unfixed bugs
 - React bug with OS. Able to sign up for an account but unable to sign into that account on an apple phone. Sign Up and Sign In Function working for android phones and on desktop.
 
-## Future potential features (addition of calender to add recipes to to meal prep)
+## Future potential features 
+- Add rating system to to rate recipes out of fiv starts to replace like feature.
+- Add calender feature to allow users to add specific recipe posts to specific dates to help them meal prep.
 
 ## Credits and Acknowledgements
+- The **Code Institute - Moments module** which help build this project with the steps following meticulously. 
+- Tutor Support with team institute to help me in my many moments of panic when any error arose.
+- My mentor Adegbenga Adeye for helping with ideas to add to this app.
+- (https://react.dev/learn/describing-the-ui#rendering-lists) - For helping me create the shopping list app.
+- (https://www.freecodecamp.org/news/react-crud-app-how-to-create-a-book-management-app-from-scratch/) - For helping me create the shoppinglist app.
+- (https://getbootstrap.com/docs/4.0/utilities/sizing/) - helping with styling the shoppinglist app.
+
+
