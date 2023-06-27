@@ -235,9 +235,8 @@ Sign In - Can enter valid input and sign in | Inputted valid username and passwo
 - Warnings mainly consisted of "'import' is only available in ES6 (use 'esversion: 6').", "'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz)." and "'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6')."
 
 ### Lighthouse
-- Scored a 59 on lighthouse.
-- ![proj 5 lighthouse](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/ca1e4e41-68f2-4aab-a67f-5921505988b8)
-
+- Scored a 77 for performance on lighthouse.
+- ![new lighthouse proj 5](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/a044feb5-db21-4259-a62c-5d3a81fd6801)
 
 ## Components 
 There are 5 components used in this project.
