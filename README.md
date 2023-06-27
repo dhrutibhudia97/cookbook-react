@@ -260,8 +260,8 @@ There are two hooks used in this project.
 - HTML
 - Python
 - React JS
-- React bootstrap
-- React library
+- React bootstrap - used to help format the layout of this app, importing many features including spinner, container, image, button and alert, all used in multiple pages throughout the project.
+- React library - react-router-dom used to implement routing throughout the app.
 
 ### Other programs used
 - [Font Awesome](https://fontawesome.com/)
