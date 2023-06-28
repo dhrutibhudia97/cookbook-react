@@ -7,7 +7,7 @@
 
 ## Project Goals
 The aim for this project was to be able to build a content-sharing web application with React and API (Django Rest Framework) Back-End. Users are able to create an account and share their own recipes blogs, while viewing other recipe blogs that they can like and comment on, follow other users and create a shopping list to ensure they have everything the need to follow these recipes.
-The target audience would be anyone who is interested in food, cooking, drinks or who wants to learn more and try to cook more. This app allows interactivity between different users as they cn comment and like other posts to review recipes or ask questions to the user about their post.
+The target audience would be anyone who is interested in food, cooking, drinks or who wants to learn more and try to cook more. This app allows interactivity between different users as they can comment and like other posts to review recipes or ask questions to the user about their recipes.
 
 
 ## User Stories - link to Kanban Project Board
@@ -58,7 +58,7 @@ Sign In
 - ![features sign up](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/787bb826-da74-470a-be99-6dc43d88dfa9)
 
 #### Valid input required
-- Cannot username that already exists, or passwords that are too short, entirely numerical, not matching.
+- Cannot use username that already exists, or passwords that are too short, entirely numerical, not matching.
 - ![sign up valid input](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/894e5a9b-f942-45d6-b93f-b733d74c6f77)
 
 ### Sign In
@@ -81,7 +81,7 @@ Sign In
 - User can now like and comment on posts, follow and unfollow other profiles and access more pages.
 - ![home page logged in](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/90aa8b7a-ac0b-4de0-90cb-d51e816b163d)
 
-#### Navigation bar with added access to site
+#### Navigation bar when logged in
 - Added access to Add Post, My Faves, My Profile and Shopping List. 
 - ![navbar logged in](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/8de03a50-8029-46a4-af8a-c88b8beb49bd)
 
@@ -93,8 +93,8 @@ Sign In
 - ![search bar shopping list](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/21fb19bc-6f45-4d81-afef-bd347cdbfb8d)
 
 ### Creating a Post
-- Logged in users can create a post by liking on item in navigation bar.
-- They need to upload and photo and add a title, keywords, ingredients and a method.
+- Logged in users can create a post by clicking on add a food post item in navigation bar.
+- They need to upload a photo, add a title, keywords, ingredients and a method.
 - ![add a post](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/d5679ad9-c1c4-42a4-9557-3a62ba87381e)
 
 ### Editing a post
@@ -110,17 +110,17 @@ Sign In
 
 #### logged out state
 - Cannot like posts when not logged in, message pops up when user hovers over icon.
-![like logged out](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/087d48f5-b75d-4129-a677-a5b918ff1c6a)
+- ![like logged out](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/087d48f5-b75d-4129-a677-a5b918ff1c6a)
 
 #### like own post response
 - Cannot like own post, message pops up to user.
 - ![like own post](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/30eb0027-ec45-4e92-a447-88231fa53f49)
 
-### Commented a Post
+### Commenting on a Post
 - Creating a comment as a logged in user.
 - ![commenting](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/2a4b01e7-c3d9-4e09-82f2-ebde32813eb4)
 
-- Editing a comment you have previously mde by clicking on three dot icon on top right of comment.
+- Editing a comment you have previously made by clicking on three dot icon on top right of comment.
 - ![comment edit](https://github.com/dhrutibhudia97/cookbook-react/assets/107180641/6ca7473f-84fa-415d-a0c9-ba97a719bab9)
 
 #### logged out state 
@@ -176,16 +176,16 @@ Sign In
 
 
 ## Manual Testing
-I focussed on Manual testing over Automated testing. The Results are in this table.
+I focused on Manual testing over Automated testing. The Results are in this table.
 
 | Feature Tested       | Steps taken                 | Results  |
 |----------------------|-----------------------------|----------|
-| Sign Up - Available for logged out users | Logged out of account and clicked on sign up page in the NavBar.| ✓ only available for logged out users |
+| Sign Up - Available for logged out users | Logged out of account and clicked on sign up page in the NavBar.| ✓ only available for logged out users | 
 | Sign Up - Form can be filled correctly to create a new account | Add valid username, password and confirm password | ✓ invalid suggestions results in message to user.|
 Sign Up - Creating a new account successfully and waiting to be redirected to Sign In page | Created a new account, and being instantly redirected to sign in page | ✓ instantly redirected to sign in page|
 | Sign Up - responsive on mobile devices and desktop | Signing Up for an account on mobile devices | ✓ - for android and OS devices, can sign up for an account and get redirected to sign in page|
 |Sign In - Page available to logged out users | Logged out of account and clicked sign in page in the NavBar.| ✓ redirected me to sign in page |
-Sign In - Can enter valid input and sign in | Inputted valid username and password and get redirected to homepage | ✓ - redirected to homepage of logged in account. |
+Sign In - Can enter valid input and sign in | Input valid username and password and get redirected to homepage | ✓ - redirected to homepage of logged in account. |
 | Sign In - responsive on mobile devices and desktop | On desktop and on mobile devices, attempt to sign in using valid username and password. |✓ - Successfully sign in on android devices. X - cannot sign in on OS devices (known bug with React and OS - in unfixed bug section.) |
 | Sign Out - Available for users who are logged in only. | See if the sign out option is on the NavBar if I am logged in. When logged out option not available on NavBar | ✓ - sign out option available |
 | Sign Out - Functionality | If i click the Sign Out option will I be signed out | ✓ - Signed out and back to homepage of non account holder |
@@ -203,6 +203,7 @@ Sign In - Can enter valid input and sign in | Inputted valid username and passwo
 | Liked - Cannot like my own posts | As a logged in user, trying to like my own post | ✓ - message pops up "you cannot like your own posts" |
 | Like - Able to like other users posts | As a logged in user, trying to like other users posts | ✓ - able to like other users posts, and the number of likes increases by 1 and the icon becomes shaded |
 | Like - Able to unlike a previously liked post | As a logged in user, trying to unlike a post I have previously liked | ✓ - able to unlike post, number of likes decreases by 1 and icon becomes unshaded |
+| Like - if my liked posts are on My Faves page. | As a logged in user, like a post and then go to my faves page. | ✓ - Can see the posts I have previously liked on this page. |
 |Like - responsive on mobile and desktop | As a logged in user able to like and unlike posts on desktop and mobile | ✓ - Able to like and unlike posts |
 | Comments - Cannot comment on Posts if I am logged out | As a logged out user trying to comment on posts on my homepage | ✓ - unable to comment posts, I get redirected to posts page and get to view comments, but no option to create a comment. |
 | Comment - Able to comment on my own posts or other users posts | As a logged in user, trying to comment on my own post and other user posts| ✓ - Able to create and view comments I have made on mine or other users posts. |
@@ -210,7 +211,7 @@ Sign In - Can enter valid input and sign in | Inputted valid username and passwo
 | Comment - Able to delete comments I have previously made | As a logged in user, trying to delete previous comments I have made on either my posts or other user posts | ✓  - comments have been deleted and I cannot see them anymore. |
 |Comment- responsive on mobile and desktop | As a logged in user able to create, read, edit and delete comments on mine or other users posts. | ✓ - CRUD functionality for comments works on desktop and mobile devices. |
 | Followers -  Logged out users cannot follow anyone | As a logged out user, see if the option to follow other users is available | ✓ - follow button is not available to click on if logged out |
-| Followes - Logged in users can follow other users | As a logged in user, see if the option to follow other users is available to click, and see if it increases my following number and their followers number | ✓ - option to click "follow" for other users is available on the homepage. Doing so does increase my following number my one and their followers number by one which can be viewed in the profile page |
+| Followers - Logged in users can follow other users | As a logged in user, see if the option to follow other users is available to click, and see if it increases my following number and their followers number | ✓ - option to click "follow" for other users is available on the homepage. Doing so does increase my following number my one and their followers number by one which can be viewed in the profile page |
 | Followers - Logged in users can unfollow users they currently follow. | As a logged in user I am unable to unfollow users and my following number decreases by one and their followers numbers decreases by 1. | ✓ - When i click unfollow, my followers number decreases by 1 and their followers number decreases by one, the unfollow button then changes to a follow button again. |
 | Followers - responsive on mobile and desktop | As a logged in user I am able to follow and unfollow users on both desktop and mobile | ✓ - Can follow and unfollow user on desktop and mobile devices. |
 |Shopping List - logged out user unable to access this page | As a logged out user, seeing if shopping list page is available to access | ✓ - Shopping list is not on the navigation bar when logged out. When logged out and accessing the page /shoppinglist - the shopping list page shows up, but with the message "shopping list is loading" and I am unable to add any items to an empty list."
@@ -265,7 +266,7 @@ There are two hooks used in this project.
 ### Other programs used
 - [Font Awesome](https://fontawesome.com/)
 - [Google Font](https://fonts.google.com/)
-- [Gitub](https://github.com/)
+- [Github](https://github.com/)
 - Gitpod
 - [Heroku](https://heroku.com/)
 - Axios
@@ -302,7 +303,7 @@ Make sure to git add, git commit and git push these changes.
 - React bug with OS. Able to sign up for an account but unable to sign into that account on an apple phone. Sign Up and Sign In Function working for android phones and on desktop.
 
 ## Future potential features 
-- Add rating system to to rate recipes out of fiv starts to replace like feature.
+- Add rating system to to rate recipes out of five starts to replace like feature.
 - Add calender feature to allow users to add specific recipe posts to specific dates to help them meal prep.
 
 ## Credits and Acknowledgements
